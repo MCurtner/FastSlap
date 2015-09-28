@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		BA1D65661BB9A1ED00D0F9CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65651BB9A1ED00D0F9CA /* AppDelegate.swift */; };
-		BA1D65681BB9A1ED00D0F9CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65671BB9A1ED00D0F9CA /* ViewController.swift */; };
 		BA1D656B1BB9A1ED00D0F9CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1D65691BB9A1ED00D0F9CA /* Main.storyboard */; };
 		BA1D656D1BB9A1ED00D0F9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1D656C1BB9A1ED00D0F9CA /* Assets.xcassets */; };
 		BA1D65701BB9A1ED00D0F9CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1D656E1BB9A1ED00D0F9CA /* LaunchScreen.storyboard */; };
 		BA1D657B1BB9A1ED00D0F9CA /* FastSlapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D657A1BB9A1ED00D0F9CA /* FastSlapTests.swift */; };
 		BA1D65861BB9A1ED00D0F9CA /* FastSlapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65851BB9A1ED00D0F9CA /* FastSlapUITests.swift */; };
+		BA1D659A1BB9A7DA00D0F9CA /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		BA1D65621BB9A1ED00D0F9CA /* FastSlap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastSlap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1D65651BB9A1ED00D0F9CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA1D65671BB9A1ED00D0F9CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA1D656A1BB9A1ED00D0F9CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA1D656C1BB9A1ED00D0F9CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA1D656F1BB9A1ED00D0F9CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		BA1D65811BB9A1ED00D0F9CA /* FastSlapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastSlapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1D65851BB9A1ED00D0F9CA /* FastSlapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastSlapUITests.swift; sourceTree = "<group>"; };
 		BA1D65871BB9A1ED00D0F9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				BA1D65651BB9A1ED00D0F9CA /* AppDelegate.swift */,
-				BA1D65671BB9A1ED00D0F9CA /* ViewController.swift */,
 				BA1D65691BB9A1ED00D0F9CA /* Main.storyboard */,
 				BA1D656C1BB9A1ED00D0F9CA /* Assets.xcassets */,
 				BA1D656E1BB9A1ED00D0F9CA /* LaunchScreen.storyboard */,
 				BA1D65711BB9A1ED00D0F9CA /* Info.plist */,
+				BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */,
 			);
 			path = FastSlap;
 			sourceTree = "<group>";
@@ -193,6 +193,11 @@
 					BA1D65611BB9A1ED00D0F9CA = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = M77G4VQ69B;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+						};
 					};
 					BA1D65751BB9A1ED00D0F9CA = {
 						CreatedOnToolsVersion = 7.0;
@@ -256,8 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1D65681BB9A1ED00D0F9CA /* ViewController.swift in Sources */,
 				BA1D65661BB9A1ED00D0F9CA /* AppDelegate.swift in Sources */,
+				BA1D659A1BB9A7DA00D0F9CA /* MPCHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,10 +405,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FastSlap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewcurtner.FastSlap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -412,10 +419,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FastSlap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.matthewcurtner.FastSlap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

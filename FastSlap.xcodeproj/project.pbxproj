@@ -14,6 +14,8 @@
 		BA1D657B1BB9A1ED00D0F9CA /* FastSlapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D657A1BB9A1ED00D0F9CA /* FastSlapTests.swift */; };
 		BA1D65861BB9A1ED00D0F9CA /* FastSlapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65851BB9A1ED00D0F9CA /* FastSlapUITests.swift */; };
 		BA1D659A1BB9A7DA00D0F9CA /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */; settings = {ASSET_TAGS = (); }; };
+		BA1D659C1BB9AD9300D0F9CA /* FastSlapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D659B1BB9AD9300D0F9CA /* FastSlapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BA1D659E1BB9B51000D0F9CA /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1D659D1BB9B51000D0F9CA /* MultipeerConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		BA1D65851BB9A1ED00D0F9CA /* FastSlapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastSlapUITests.swift; sourceTree = "<group>"; };
 		BA1D65871BB9A1ED00D0F9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
+		BA1D659B1BB9AD9300D0F9CA /* FastSlapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastSlapViewController.swift; sourceTree = "<group>"; };
+		BA1D659D1BB9B51000D0F9CA /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1D659E1BB9B51000D0F9CA /* MultipeerConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,7 @@
 		BA1D65591BB9A1ED00D0F9CA = {
 			isa = PBXGroup;
 			children = (
+				BA1D659D1BB9B51000D0F9CA /* MultipeerConnectivity.framework */,
 				BA1D65641BB9A1ED00D0F9CA /* FastSlap */,
 				BA1D65791BB9A1ED00D0F9CA /* FastSlapTests */,
 				BA1D65841BB9A1ED00D0F9CA /* FastSlapUITests */,
@@ -103,6 +109,7 @@
 				BA1D656E1BB9A1ED00D0F9CA /* LaunchScreen.storyboard */,
 				BA1D65711BB9A1ED00D0F9CA /* Info.plist */,
 				BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */,
+				BA1D659B1BB9AD9300D0F9CA /* FastSlapViewController.swift */,
 			);
 			path = FastSlap;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			files = (
 				BA1D65661BB9A1ED00D0F9CA /* AppDelegate.swift in Sources */,
 				BA1D659A1BB9A7DA00D0F9CA /* MPCHandler.swift in Sources */,
+				BA1D659C1BB9AD9300D0F9CA /* FastSlapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

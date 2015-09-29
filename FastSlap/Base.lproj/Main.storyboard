@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u8c-YN-zVe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Fast Slap View Controller-->
@@ -16,17 +17,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbackground" translatesAutoresizingMaskIntoConstraints="NO" id="h6Q-mn-fV9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbackground" translatesAutoresizingMaskIntoConstraints="NO" id="h6Q-mn-fV9" userLabel="BackgroundImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FACE" translatesAutoresizingMaskIntoConstraints="NO" id="xsQ-UI-X8r" customClass="FSImageView" customModule="FastSlap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="eLT-ga-YOc"/>
+                                    <constraint firstAttribute="height" constant="170" id="sle-Ps-WvV"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eLT-ga-YOc"/>
+                                        <exclude reference="sle-Ps-WvV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="eLT-ga-YOc"/>
+                                        <include reference="sle-Ps-WvV"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FACE" translatesAutoresizingMaskIntoConstraints="NO" id="Zh1-gi-rd9" customClass="FSImageView" customModule="FastSlap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="5Q2-Um-L54"/>
+                                    <constraint firstAttribute="height" constant="170" id="m2r-V0-1QN"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5Q2-Um-L54"/>
+                                        <exclude reference="m2r-V0-1QN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="5Q2-Um-L54"/>
+                                        <include reference="m2r-V0-1QN"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="h6Q-mn-fV9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J42-aj-CSN"/>
+                            <constraint firstItem="Zh1-gi-rd9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q2S-Lh-5r4"/>
                             <constraint firstItem="h6Q-mn-fV9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ucb-nF-3lQ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="xsQ-UI-X8r" secondAttribute="bottom" constant="-101" id="d90-wU-wIc">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="xsQ-UI-X8r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jFl-ry-XP3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h6Q-mn-fV9" secondAttribute="bottom" id="pbv-bx-FW9"/>
                             <constraint firstAttribute="trailing" secondItem="h6Q-mn-fV9" secondAttribute="trailing" id="sGL-kd-fC6"/>
+                            <constraint firstItem="Zh1-gi-rd9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xhV-i9-sD7"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xsQ-UI-X8r"/>
+                                <exclude reference="Zh1-gi-rd9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Q2S-Lh-5r4"/>
+                                <exclude reference="xhV-i9-sD7"/>
+                                <exclude reference="d90-wU-wIc"/>
+                                <exclude reference="jFl-ry-XP3"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xsQ-UI-X8r"/>
+                                <include reference="Zh1-gi-rd9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Q2S-Lh-5r4"/>
+                                <include reference="xhV-i9-sD7"/>
+                                <include reference="d90-wU-wIc"/>
+                                <include reference="jFl-ry-XP3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="j9S-h2-iwT">
                         <barButtonItem key="leftBarButtonItem" title="Connect" id="hOO-0m-Zmi">
@@ -35,10 +104,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="centerCardsField" destination="Zh1-gi-rd9" id="a2H-08-OTh"/>
+                        <outlet property="playCardField" destination="xsQ-UI-X8r" id="8Dq-vx-ZIM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="350"/>
+            <point key="canvasLocation" x="1311" y="350"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zME-La-jcy">
@@ -60,6 +133,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FACE" width="51" height="73"/>
         <image name="newbackground" width="667" height="622"/>
     </resources>
 </document>

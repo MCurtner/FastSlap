@@ -16,6 +16,9 @@
 		BA1D659A1BB9A7DA00D0F9CA /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		BA1D659C1BB9AD9300D0F9CA /* FastSlapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D659B1BB9AD9300D0F9CA /* FastSlapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		BA1D659E1BB9B51000D0F9CA /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1D659D1BB9B51000D0F9CA /* MultipeerConnectivity.framework */; };
+		BA1D65A41BBAF15100D0F9CA /* FSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65A31BBAF15100D0F9CA /* FSImageView.swift */; settings = {ASSET_TAGS = (); }; };
+		BA1D65A61BBB038F00D0F9CA /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65A51BBB038F00D0F9CA /* GameState.swift */; settings = {ASSET_TAGS = (); }; };
+		BA1D65A71BBB038F00D0F9CA /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D65A51BBB038F00D0F9CA /* GameState.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 		BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
 		BA1D659B1BB9AD9300D0F9CA /* FastSlapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastSlapViewController.swift; sourceTree = "<group>"; };
 		BA1D659D1BB9B51000D0F9CA /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		BA1D65A31BBAF15100D0F9CA /* FSImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSImageView.swift; sourceTree = "<group>"; };
+		BA1D65A51BBB038F00D0F9CA /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +87,6 @@
 		BA1D65591BB9A1ED00D0F9CA = {
 			isa = PBXGroup;
 			children = (
-				BA1D659D1BB9B51000D0F9CA /* MultipeerConnectivity.framework */,
-				BA1D65641BB9A1ED00D0F9CA /* FastSlap */,
 				BA1D65791BB9A1ED00D0F9CA /* FastSlapTests */,
 				BA1D65841BB9A1ED00D0F9CA /* FastSlapUITests */,
 				BA1D65631BB9A1ED00D0F9CA /* Products */,
@@ -103,6 +106,7 @@
 		BA1D65641BB9A1ED00D0F9CA /* FastSlap */ = {
 			isa = PBXGroup;
 			children = (
+				BA1D65A81BBB039800D0F9CA /* Model */,
 				BA1D65651BB9A1ED00D0F9CA /* AppDelegate.swift */,
 				BA1D65691BB9A1ED00D0F9CA /* Main.storyboard */,
 				BA1D656C1BB9A1ED00D0F9CA /* Assets.xcassets */,
@@ -110,13 +114,17 @@
 				BA1D65711BB9A1ED00D0F9CA /* Info.plist */,
 				BA1D65991BB9A7DA00D0F9CA /* MPCHandler.swift */,
 				BA1D659B1BB9AD9300D0F9CA /* FastSlapViewController.swift */,
+				BA1D65A31BBAF15100D0F9CA /* FSImageView.swift */,
+				BA1D659D1BB9B51000D0F9CA /* MultipeerConnectivity.framework */,
 			);
-			path = FastSlap;
+			name = FastSlap;
+			path = ../FastSlap;
 			sourceTree = "<group>";
 		};
 		BA1D65791BB9A1ED00D0F9CA /* FastSlapTests */ = {
 			isa = PBXGroup;
 			children = (
+				BA1D65641BB9A1ED00D0F9CA /* FastSlap */,
 				BA1D657A1BB9A1ED00D0F9CA /* FastSlapTests.swift */,
 				BA1D657C1BB9A1ED00D0F9CA /* Info.plist */,
 			);
@@ -130,6 +138,14 @@
 				BA1D65871BB9A1ED00D0F9CA /* Info.plist */,
 			);
 			path = FastSlapUITests;
+			sourceTree = "<group>";
+		};
+		BA1D65A81BBB039800D0F9CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA1D65A51BBB038F00D0F9CA /* GameState.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +286,9 @@
 			files = (
 				BA1D65661BB9A1ED00D0F9CA /* AppDelegate.swift in Sources */,
 				BA1D659A1BB9A7DA00D0F9CA /* MPCHandler.swift in Sources */,
+				BA1D65A61BBB038F00D0F9CA /* GameState.swift in Sources */,
 				BA1D659C1BB9AD9300D0F9CA /* FastSlapViewController.swift in Sources */,
+				BA1D65A41BBAF15100D0F9CA /* FSImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA1D657B1BB9A1ED00D0F9CA /* FastSlapTests.swift in Sources */,
+				BA1D65A71BBB038F00D0F9CA /* GameState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
